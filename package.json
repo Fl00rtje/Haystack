@@ -8,5 +8,9 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=6.0.0",
+    "yarn": ">=0.25.2"
   }
 }
