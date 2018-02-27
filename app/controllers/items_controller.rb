@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    authorize @item
   end
 
   def new
@@ -18,4 +19,9 @@ class ItemsController < ApplicationController
 
   def update
   end
+
+   def item_params
+    params.require(:item).permit(:name, :description, :category, :shop_location, :price)
+  end
+
 end
