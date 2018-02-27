@@ -3,9 +3,11 @@ class ItemPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-    # def show?
-    #   true
-    # end
+  end
+
+  def show?
+    false
+    # change to 'true' if you want to work on the show page wo being loged in
   end
 
   def create?

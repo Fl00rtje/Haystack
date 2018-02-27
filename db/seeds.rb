@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 floor = User.create!(email: "floor2@gmail.com", password: "password")
-Item.create!(name: "Fancy Shoe", description: "Super cool Adidas sneaker", user_id: floor.id);
+Item.create!(name: "Fancy Shoe", description: "Super cool Adidas sneaker", user_id: floor.id)
