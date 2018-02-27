@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new()
+    authorize @item
   end
 
   def create
@@ -19,7 +20,7 @@ class ItemsController < ApplicationController
     authorize @item
     @item.user = current_user
     if @item.save
-      redirect_to(@items)
+      redirect_to(@item)
     else
       render :new
     end
