@@ -11,13 +11,10 @@ class ItemsController < ApplicationController
   end
 
   def new
-     @item = Item.new()
-
+    @item = Item.new()
   end
 
   def create
-
-
     @item = Item.new(item_params)
     authorize @item
     @item.user = current_user
@@ -42,6 +39,6 @@ class ItemsController < ApplicationController
 
 private
   def item_params
-    params.require(:item).permit(:name, :description, :category, :shop_location, :price)
+    params.require(:item).permit(:name, :description, :category, :shop_location, :price, :photo)
   end
 end

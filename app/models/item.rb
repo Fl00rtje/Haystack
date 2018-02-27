@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
+  mount_uploader :photo, PhotoUploader
 
   SHOPS = [
     'Rataplan Amsterdam',
@@ -15,5 +16,4 @@ class Item < ApplicationRecord
     'Kringloop centrum Duivendrecht',
     'Kringloper Naarden'
   ]
-
 end
