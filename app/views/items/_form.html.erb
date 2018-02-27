@@ -1,0 +1,28 @@
+<%= simple_form_for(item) do |f| %>
+ <% if @item.errors.any? %>
+    <div class="errors-container">
+      <ul>
+        <% @item.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control'%>
+  <%= f.label :description %>
+  <%= f.text_field :description, class: 'form-control'%>
+
+  <%= f.input :category , collection: [:Furniture, :Clothing, :Ceramics,:Books,:Toys,:Other], include_blank: false %>
+  <%= f.input :shop_location, collection: Item::SHOPS, include_blank: false %>
+  <%= f.label :price %>
+  <%= f.text_field :price, class: 'form-control'%>
+
+
+
+<!-- TODO add new photo insert -->
+</div>
+
+<%= f.submit class: 'btn btn-primary' %>
+<% end %>
