@@ -7,4 +7,8 @@ class ItemPolicy < ApplicationPolicy
     #   true
     # end
   end
+
+  def create?
+    true
+  end
 end
