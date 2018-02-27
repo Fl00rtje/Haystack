@@ -15,10 +15,11 @@
   <%= f.text_field :description, class: 'form-control'%>
 
   <%= f.input :category , collection: [:Furniture, :Clothing, :Ceramics,:Books,:Toys,:Other], include_blank: false %>
+  <%= f.input :shop_location, collection: Item::SHOPS, include_blank: false %>
   <%= f.label :price %>
   <%= f.text_field :price, class: 'form-control'%>
-  <%= f.label :shop_location %>
-  <%= f.text_field :shop_location, class: 'form-control'%>
+
+
 
 <!-- TODO add new photo insert -->
 </div>

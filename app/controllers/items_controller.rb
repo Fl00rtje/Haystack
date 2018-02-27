@@ -1,4 +1,8 @@
 class ItemsController < ApplicationController
+  # should be removed when task (add item) is finalized
+  # skip_after_action :verify_authorized, only: [:new, :create]
+
+  skip_before_action :authenticate_user!, only: [:new, :create]
 
   def index
   end
@@ -8,13 +12,17 @@ class ItemsController < ApplicationController
 
   def new
      @item = Item.new()
+
   end
 
   def create
+
+
     @item = Item.new(item_params)
+    authorize @item
     @item.user = current_user
     if @item.save
-      redirect_to(@item)
+      redirect_to(@items)
     else
       render :new
     end
