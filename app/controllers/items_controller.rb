@@ -1,13 +1,12 @@
 class ItemsController < ApplicationController
-  # should be removed when task (add item) is finalized
-  # skip_after_action :verify_authorized, only: [:new, :create]
-
-  skip_before_action :authenticate_user!, only: [:new, :create]
+  skip_before_action :authenticate_user!, only: :index
 
   def index
+    @items = policy_scope(Item).order(created_at: :asc)
   end
 
   def show
+    @item = Item.find(params[:id])
   end
 
   def new
