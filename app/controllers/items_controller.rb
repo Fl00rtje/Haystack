@@ -11,13 +11,11 @@ class ItemsController < ApplicationController
   end
 
   def new
-     @item = Item.new()
-
+    @item = Item.new()
+    authorize @item
   end
 
   def create
-
-
     @item = Item.new(item_params)
     authorize @item
     @item.user = current_user
@@ -37,11 +35,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item = Item.update(item_params)
     authorize @item
-    redirect_to root_path
+    redirect_to(Item.last)
   end
 
 private
   def item_params
-    params.require(:item).permit(:name, :description, :category, :shop_location, :price)
+    params.require(:item).permit(:name, :description, :category, :shop_location, :price, :available)
   end
 end

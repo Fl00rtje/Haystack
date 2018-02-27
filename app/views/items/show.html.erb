@@ -5,6 +5,18 @@
   <p><%= @item.category %></p>
   <p><%= @item.photo %></p>
 
+  <% if @item.available %>
+    <i class="fa fa-check-square-o"></i>
+    <i class="fa fa-square-o"></i> This item is already reserved
+  <% else %>
+    <%= button_to "Reserve item", edit_item_path, method: :get, :form_class => "my_class" %>
+  <% end %>
+
+
+
+
+
+
 
 
 

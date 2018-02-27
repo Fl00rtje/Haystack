@@ -20,7 +20,9 @@
   <%= f.text_field :price, class: 'form-control'%>
 
 
-
+<% if action_name == "edit" %>
+  <%= f.input :available %>
+<% end %>
 <!-- TODO add new photo insert -->
 </div>
 
