@@ -11,10 +11,9 @@
   <% else %>
     <%= button_to "Reserve item", edit_item_path, method: :get, :form_class => "my_class" %>
   <% end %>
-
-
-
-
+  <!--- Here follow links that should be used -->
+  <%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %>
+  <%#= link_to: "Edit", edit_item(@item)   %>
 
 
 

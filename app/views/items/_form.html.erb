@@ -18,12 +18,11 @@
   <%= f.input :shop_location, collection: Item::SHOPS, include_blank: false %>
   <%= f.label :price %>
   <%= f.text_field :price, class: 'form-control'%>
-
-
-<% if action_name == "edit" %>
-  <%= f.input :available %>
-<% end %>
-<!-- TODO add new photo insert -->
+  <% if action_name == "edit" %>
+    <%= f.input :available %>
+  <% end %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
 </div>
 
 <%= f.submit class: 'btn btn-primary' %>
