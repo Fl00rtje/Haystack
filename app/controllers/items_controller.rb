@@ -35,11 +35,11 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @item = Item.update(item_params)
     authorize @item
-    redirect_to root_path
+    redirect_to(Item.last)
   end
 
 private
   def item_params
-    params.require(:item).permit(:name, :description, :category, :shop_location, :price, :photo)
+    params.require(:item).permit(:name, :description, :category, :shop_location, :price, :photo, :available)
   end
 end
