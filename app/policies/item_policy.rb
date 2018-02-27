@@ -3,5 +3,8 @@ class ItemPolicy < ApplicationPolicy
     def resolve
       scope
     end
+    # def show?
+    #   true
+    # end
   end
 end
