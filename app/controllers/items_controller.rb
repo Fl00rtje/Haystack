@@ -7,13 +7,14 @@ class ItemsController < ApplicationController
   end
 
   def new
-     @item = Item.new
+     @item = Item.new()
   end
 
   def create
-    @item = Item.new
+    @item = Item.new(item_params)
+    @item.user = current_user
     if @item.save
-      redirect_to(Item.last)
+      redirect_to(@item)
     else
       render :new
     end
@@ -23,5 +24,10 @@ class ItemsController < ApplicationController
   end
 
   def update
+  end
+
+private
+  def item_params
+    params.require(:item).permit(:name, :description, :category, :shop_location, :price)
   end
 end
