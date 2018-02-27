@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   post'items',to: "items#create"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :show, :update, :edit]
 end
