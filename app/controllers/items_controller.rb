@@ -7,9 +7,16 @@ class ItemsController < ApplicationController
   end
 
   def new
+     @item = Item.new
   end
 
   def create
+    @item = Item.new
+    if @item.save
+      redirect_to(Item.last)
+    else
+      render :new
+    end
   end
 
   def edit

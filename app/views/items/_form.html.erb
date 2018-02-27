@@ -1,0 +1,13 @@
+<%= simple_form_for(item) do |f| %>
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :description, class: 'form-control'%>
+  <%= f.label :category %>
+  <%= f.label :price %>
+  <%= f.label :location %>
+<!--
+   TODO add new photo insert -->
+</div>
+
+<%= f.submit class: 'btn btn-primary' %>
+<% end %>
