@@ -33,9 +33,9 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item = Item.update(item_params)
+    @item.update(item_params)
     authorize @item
-    redirect_to(Item.last)
+    redirect_to(@item)
   end
 
 private
