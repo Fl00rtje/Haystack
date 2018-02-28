@@ -1,3 +1,5 @@
+<%= render 'shared/search_form' %>
+
 <h1>Items</h1>
 
 <% @items.each do |item| %>
@@ -7,6 +9,6 @@
   <%= item.description %><br>
   <%= item.shop_location %><br>
   <%= item.available %>
-  <%#= item.photo cl_image_tag %>
+  <%#= item.photo cl_image_tag %>s
   <%#= link_to "Show", #_path %>
 <% end %>
