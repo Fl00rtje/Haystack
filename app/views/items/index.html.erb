@@ -7,6 +7,6 @@
   <%= item.description %><br>
   <%= item.shop_location %><br>
   <%= item.available %><br>
-  <%#= item.photo cl_image_tag %>
+  <%= cl_image_tag item.photo, height: 100, width: 100, crop: :fill %><br>
   <%= "-----------------------------------------" %><br>
 <% end %>
