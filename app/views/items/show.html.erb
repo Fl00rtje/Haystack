@@ -1,30 +1,41 @@
-<h1><%= @item.name %></h1>
-<p><%= @item.shop_location %></p>
-<p><%= @item.description %></p>
-<p><%= @item.price %></p>
-<p><%= @item.category %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 ">
+      <div class="show-boxes">
+        <%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %><br>
 
-<br>
+        <% if policy(@item).edit? %>
+          <%= link_to "Edit item", edit_item_path %>
+        <% end %><br>
+        <%= button_to "Back to items", items_path, method: :get %><br>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 ">
+      <div class="show-boxes">
+        <h1><%= @item.name %></h1>
+        <p><%= @item.shop_location %></p>
+        <p><%= @item.description %></p>
+        <p><%= @item.price %></p>
+        <p><%= @item.category %></p>
 
-<% if @item.available %>
-  <i class="fa fa-check-square-o"></i>
-  <i class="fa fa-square-o"></i>This item is available
-<% else %>
-  <i class="fa fa-check-square-o"></i>
-  <i class="fa fa-square-o"></i>This item is already reserved
-<% end %>
-<br>
+        <br>
 
-<% if policy(@item).edit? && @item.available%>
-  <%= button_to "Reserve item", edit_item_path, method: :get, :form_class => "my_class" %>
-<% end %>
+        <% if @item.available %>
+          <i class="fa fa-check-square-o"></i>
+          <i class="fa fa-square-o"></i>This item is available
+        <% else %>
+          <i class="fa fa-check-square-o"></i>
+          <i class="fa fa-square-o"></i>This item is already reserved
+        <% end %>
+        <br>
 
-<%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %><br>
-
-<% if policy(@item).edit? %>
-  <%= link_to "Edit item", edit_item_path %>
-<% end %><br>
-<%= link_to "Back to items", items_path %><br>
+        <% if policy(@item).edit? && @item.available%>
+          <%= button_to "Reserve item", edit_item_path, method: :get, :form_class => "my_class" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
