@@ -6,11 +6,13 @@
 <p><%= @item.photo %></p>
 
 <% if @item.available %>
-  <i class="fa fa-check-square-o"></i>
-  <i class="fa fa-square-o"></i>This item is already reserved
-<% else %>
-  <%= button_to "Reserve item", edit_item_path, method: :get, :form_class => "my_class" %>
-<% end %><br>
+    <i class="fa fa-check-square-o"></i>
+    <%= button_to "Reserve item", edit_item_path, method: :get, :form_class => "my_class" %>
+  <% else %>
+    <i class="fa fa-square-o"></i> This item is already reserved.
+  <% end %>
+
+<br>
 <!--- Here follow links that should be used -->
 <%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %><br>
 <%#= link_to: "Edit", edit_item(@item)   %>
@@ -20,6 +22,7 @@
 <% if policy(@item).edit? %>
   <%= link_to "Edit item", edit_item_path %>
 <% end %>
+
 
 
 
