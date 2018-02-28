@@ -17,9 +17,9 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    authorize @item
     @item.user = current_user
     if @item.save
+      authorize @item
       redirect_to(@item)
     else
       render :new
