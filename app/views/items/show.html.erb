@@ -4,24 +4,27 @@
 <p><%= @item.price %></p>
 <p><%= @item.category %></p>
 
+<br>
 
 <% if @item.available %>
-    <i class="fa fa-check-square-o"></i>
-    <%= button_to "Reserve item", edit_item_path, method: :get, :form_class => "my_class" %>
-  <% else %>
-    <i class="fa fa-square-o"></i> This item is already reserved.
-  <% end %>
-
+  <i class="fa fa-check-square-o"></i>
+  <i class="fa fa-square-o"></i>This item is available
+<% else %>
+  <i class="fa fa-check-square-o"></i>
+  <i class="fa fa-square-o"></i>This item is already reserved
+<% end %>
 <br>
-<!--- Here follow links that should be used -->
-<%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %><br>
-<%#= link_to: "Edit", edit_item(@item)   %>
 
-<%= link_to "Back to items", items_path %><br>
+<% if policy(@item).edit? && @item.available%>
+  <%= button_to "Reserve item", edit_item_path, method: :get, :form_class => "my_class" %>
+<% end %>
+
+<%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %><br>
 
 <% if policy(@item).edit? %>
   <%= link_to "Edit item", edit_item_path %>
-<% end %>
+<% end %><br>
+<%= link_to "Back to items", items_path %><br>
 
 
 
