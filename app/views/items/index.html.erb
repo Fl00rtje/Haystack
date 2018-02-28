@@ -1,12 +1,12 @@
 <h1>Items</h1>
 
 <% @items.each do |item| %>
-  <%= item.name %><br>
+  <%= link_to item.name, item_path(item) %><br>
   <%= item.price %><br>
   <%= item.category %><br>
   <%= item.description %><br>
   <%= item.shop_location %><br>
-  <%= item.available %>
+  <%= item.available %><br>
   <%#= item.photo cl_image_tag %>
-  <%#= link_to "Show", #_path %>
+  <%= "-----------------------------------------" %><br>
 <% end %>
