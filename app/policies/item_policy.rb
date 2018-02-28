@@ -6,7 +6,7 @@ class ItemPolicy < ApplicationPolicy
   end
 
   def show?
-    false
+    true
     # change to 'true' if you want to work on the show page wo being loged in
   end
 
@@ -23,6 +23,4 @@ class ItemPolicy < ApplicationPolicy
     true
     # change to 'true' if you want to work on the show page wo being loged in
   end
-
-
 end
