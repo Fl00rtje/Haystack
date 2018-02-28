@@ -3,12 +3,12 @@
 <h1>Items</h1>
 
 <% @items.each do |item| %>
-  <%= item.name %><br>
+  <%= link_to item.name, item_path(item) %><br>
   <%= item.price %><br>
   <%= item.category %><br>
   <%= item.description %><br>
   <%= item.shop_location %><br>
-  <%= item.available %>
-  <%#= item.photo cl_image_tag %>s
-  <%#= link_to "Show", #_path %>
+  <%= item.available %><br>
+  <%= cl_image_tag item.photo, height: 100, width: 100, crop: :fill %><br>
+  <%= "-----------------------------------------" %><br>
 <% end %>
