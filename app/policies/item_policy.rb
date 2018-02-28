@@ -15,12 +15,14 @@ class ItemPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    true
+    # record.user == user
     # change to 'true' if you want to work on the show page wo being loged in
   end
 
   def update?
-    record.user == user
+    true
+    # record.user == user
     # change to 'true' if you want to work on the show page wo being loged in
   end
 end
