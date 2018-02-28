@@ -3,6 +3,19 @@ class ItemsController < ApplicationController
 
   def index
     @items = policy_scope(Item).order(created_at: :asc)
+    # Search all item names and descriptions for a search word
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR description ILIKE :query"
+      @items = @items.where(sql_query, query: "%#{params[:query]}%")
+    end
+    # Filter all items by a given category
+    if params[:Category].present?
+      @items = @items.where(:category => params[:Category])
+    end
+    # Filter all items by a given shop location
+    if params[:Shop_location].present?
+      @items = @items.where(:shop_location => params[:Shop_location])
+    end
   end
 
   def show
@@ -33,9 +46,9 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item = Item.update(item_params)
+    @item.update(item_params)
     authorize @item
-    redirect_to(Item.last)
+    redirect_to(@item)
   end
 
 private

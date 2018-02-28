@@ -1,0 +1,25 @@
+<%= form_tag items_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an item"
+  %>
+  <%=  select_tag "Category", options_for_select(["Furniture", "Clothing", "Ceramics", "Books", "Toys", "Other"]), :include_blank => 'All categories' %>
+   <%=  select_tag "Shop location", options_for_select([
+    'Rataplan Amsterdam',
+    'de Lokatie Amsterdam',
+    'Juttersdok Amsterdam',
+    'Mevius Amsterdam',
+    'JunJun Amsterdam',
+    'Kringloop zuidoost Amsterdam',
+    'Classic & Modern Amsterdam',
+    'Noppes Zaandam',
+    'Het Goed Zaandam',
+    'Episode Amsterdam',
+    'Kringloop centrum Duivendrecht',
+    'Kringloper Naarden'
+  ]), :include_blank => 'All shops' %>
+  <div><%= submit_tag 'Search' %></div>
+<% end %>
+
+

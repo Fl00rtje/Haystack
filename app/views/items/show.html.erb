@@ -1,19 +1,30 @@
-  <h1><%= @item.name %></h1>
-  <p><%= @item.shop_location %></p>
-  <p><%= @item.description %></p>
-  <p><%= @item.price %></p>
-  <p><%= @item.category %></p>
-  <p><%= @item.photo %></p>
+<h1><%= @item.name %></h1>
+<p><%= @item.shop_location %></p>
+<p><%= @item.description %></p>
+<p><%= @item.price %></p>
+<p><%= @item.category %></p>
+<p><%= @item.photo %></p>
 
-  <% if @item.available %>
+<% if @item.available %>
     <i class="fa fa-check-square-o"></i>
-    <i class="fa fa-square-o"></i> This item is already reserved
-  <% else %>
     <%= button_to "Reserve item", edit_item_path, method: :get, :form_class => "my_class" %>
+  <% else %>
+    <i class="fa fa-square-o"></i> This item is already reserved.
   <% end %>
-  <!--- Here follow links that should be used -->
-  <%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %>
-  <%#= link_to: "Edit", edit_item(@item)   %>
+
+<br>
+<!--- Here follow links that should be used -->
+<%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %><br>
+<%#= link_to: "Edit", edit_item(@item)   %>
+
+<%= link_to "Back to items", items_path %><br>
+
+<% if policy(@item).edit? %>
+  <%= link_to "Edit item", edit_item_path %>
+<% end %>
+
+
+
 
 
 
