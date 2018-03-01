@@ -2,9 +2,9 @@
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Find an item"
+    placeholder: "What needle are you looking for?"
   %>
-  <%=  select_tag "Category", options_for_select(["Furniture", "Clothing", "Ceramics", "Books", "Toys", "Other"]), :include_blank => 'All categories' %>
+  <%=  select_tag "Category", options_for_select(["Furniture", "Clothing", "Ceramics", "Books", "Toys", "Other"]), :include_blank => 'All categories', :class => "btn btn-primary btn-lg" %>
    <%=  select_tag "Shop location", options_for_select([
     'Rataplan Amsterdam',
     'de Lokatie Amsterdam',
@@ -18,8 +18,8 @@
     'Episode Amsterdam',
     'Kringloop centrum Duivendrecht',
     'Kringloper Naarden'
-  ]), :include_blank => 'All shops' %>
-  <div><%= submit_tag 'Search' %></div>
+  ]), :include_blank => 'All shops', :class => "btn btn-primary btn-lg" %>
+  <div style="padding-top:10px"><%= submit_tag 'Search', :class => "btn btn-primary btn-lg" %></div>
 <% end %>
 
 
