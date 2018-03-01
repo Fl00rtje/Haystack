@@ -3,7 +3,7 @@
 <div class="container">
   <h1 class="index-header"></h1>
 
-
+<%#= current_user.photo %>
 
   <div class="row">
     <% @items.each do |item| %>
@@ -27,7 +27,14 @@
         <div class="card-header">
         </div>
 
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <% unless item.user.photo.nil? %>
+        <div class="card-user">
+         <%= cl_image_tag item.user.photo, height: 40, width: 40, crop: :fill %>
+        </div>
+         <% end %>
+
+         <!-- <span>photo is:</span> -->
+         <%#= cl_image_tag item.user.photo, height: 30, width: 40, crop: :fill %>
 
         <%= link_to "", item_path(item), class: "card-link" %>
       </div>
