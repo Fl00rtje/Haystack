@@ -1,7 +1,3 @@
-class Item < ApplicationRecord
-  belongs_to :user
-  mount_uploader :photo, PhotoUploader
-
 SHOP_NAME_LAT_LONG = { shops:
   [{ name: "Rataplan",
     latitude: 52.3318305,
@@ -27,9 +23,17 @@ SHOP_NAME_LAT_LONG = { shops:
     latitude: 52.370069,
     longitude: 4.86696219999999
   },
+  { name: "RataPlan Diemen",
+    latitude: 52.3318305,
+    longitude: 4.97440830000005
+  },
   { name: "The Location",
     latitude: 52.3928371,
     longitude: 4.90472599999998
+  },
+  { name: "RataPlan Van Slingelandtstraat",
+    latitude: 52.38327,
+    longitude: 4.86518179999996
   },
   { name: "Kringloop Centrum Zuidoost",
     latitude: 52.2952611,
@@ -47,6 +51,14 @@ SHOP_NAME_LAT_LONG = { shops:
     latitude: 52.4278485,
     longitude: 4.82282110000006
   },
+  { name: "Rataplan",
+    latitude: 52.3637637,
+    longitude: 4.83549679999999
+  },
+  { name: "Episode",
+    latitude: 52.3702975,
+    longitude: 4.8843316
+  },
   { name: "Episode",
     latitude: 52.3691865,
     longitude: 4.90090550000002
@@ -55,11 +67,18 @@ SHOP_NAME_LAT_LONG = { shops:
     latitude: 52.3444037,
     longitude: 4.90849359999993
   },
+  { name: "Kringloop Centrum Duivendrecht",
+    latitude: 52.3324501,
+    longitude: 4.93905610000002
+  },
   { name: "Kringloper Naarden",
     latitude: 52.3030051,
     longitude: 5.14612239999997
+  },
+  { name: "Kringloop Amstelveen",
+    latitude: 52.2858927,
+    longitude: 4.86934259999998
   }]
 }
 
 SHOPS = SHOP_NAME_LAT_LONG[:shops].map{|e| e[:name]}
-end
