@@ -11,7 +11,10 @@
 
       <!-- Links when logged in -->
       <%= link_to "Add Item", items_new_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to destroy_user_session_path, class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
+                  <%= t(".sign_out", default: "Sign out") %>
+              <% end %>
+
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item" >
