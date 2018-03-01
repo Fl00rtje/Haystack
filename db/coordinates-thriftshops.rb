@@ -1,5 +1,5 @@
-SHOP_NAME_LAT_LONG = [ shops:
-  { name: "Rataplan",
+SHOP_NAME_LAT_LONG = { shops:
+  [{ name: "Rataplan",
     latitude: 52.3318305,
     longitude: 4.97440830000005
   },
@@ -78,5 +78,7 @@ SHOP_NAME_LAT_LONG = [ shops:
   { name: "Kringloop Amstelveen",
     latitude: 52.2858927,
     longitude: 4.86934259999998
-  },
-]
+  }]
+}
+
+SHOPS = SHOP_NAME_LAT_LONG[:shops].map{|e| e[:name]}

@@ -31,6 +31,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
+    coordinates = Item::SHOP_NAME_LAT_LONG[:shops].find{ |shop| shop[:name] == @item.shop_location }
+    @item.latitude = coordinates[:latitude]
+    @item.longitude = coordinates[:longitude]
     if @item.save
       authorize @item
       redirect_to(@item)
