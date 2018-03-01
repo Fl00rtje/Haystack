@@ -1,51 +1,71 @@
+h2 {
+  font-size: 24px;
+}
 
-.flex-container {
-  text-align: center;
+p {
+  font-size: 14px;
+}
+
+input {
+  background-color: #F2C94C;
+  font-size: 16px;
+  padding: 10px 25px;
+  border: 1px solid #F2C94C;
+  color: white;
 }
 
 .card-show {
-  margin: 150px auto;
+  margin-top: 125px;
+  margin-left: 115px;
   position: relative;
   height: 350px;
   width: 450px;
 }
 
-.card-show-arrow {
-  position: absolute;
-  left: 0px;
-  top: -30px;
-}
-.card-show-image {
-  position: absolute;
-  left: 0px;
-  top: 15px;
+.card-show-scnd {
+  margin-top: 125px;
+  margin-left: 250px;
+  position: relative;
+  padding-top: 25px;
 }
 
+.card-show-text{
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+
 #card-show-first-button {
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
+  margin-top: 5px;
+  float: left;
+  margin-right: 15px;
 }
 
 #card-show-scnd-button {
-  position: absolute;
-  left: 150px;
-  bottom: 0px;
+  margin-top: 5px;
+
 }
 
-.card-show-text {
-  position: absolute;
-  left: 0px;
-  top: 15px;
-}
-.card-show-text h2 {
-  margin: 0px;
+.button-reserve input {
+  background-color: #AD343E;
+  border: 1px solid #AD343E;}
+
+.button-category {
+  padding: 0px 10px;
 }
 
-.card-show-available {
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
+
+.fas, span, .far {
+  color: #F2C94C
 }
+
+.avatar-large {
+  width: 70px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
 
 
