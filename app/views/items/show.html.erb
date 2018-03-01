@@ -1,40 +1,52 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 ">
-      <div class="show-boxes">
-        <%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %><br>
-
-        <% if policy(@item).edit? %>
-          <%= link_to "Edit item", edit_item_path %>
-        <% end %><br>
-        <%= button_to "Back to items", items_path, method: :get %><br>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card-show text-left">
+          <div class="card-show-arrow">
+            <%= image_tag 'i_found_this' %>
+          </div>
+          <div class="card-show-image">
+            <%= cl_image_tag @item.photo, height: 300, width: 375, crop: :fill %>
+          </div>
+          <div id="card-show-first-button">
+            <%= button_to "Back to items", items_path, method: :get %>
+          </div>
+          <div id="card-show-scnd-button">
+            <% if policy(@item).edit? %>
+            <%= button_to "Edit item", edit_item_path, method: :get %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-8 ">
+        <div class="card-show-scnd text-left item-right" >
+            <div class="card-show-facts">
+              <p> <span>€</span>  <%= @item.price %></p>
+              <p> <i class="fas fa-map-marker-alt"></i> <%= @item.shop_location %></p>
+              <% if @item.available %>
+                <p><i class="far fa-plus-square"></i>
+                This item is available </p>
+              <% else %>
+                <p><i class="far fa-minus-square"></i>
+                This item is already reserved </p>
+              <% end %>
+              <%= button_to @item.category, items_path(:category=>@item.category), method: :get, :class => "button-category"%>
+            </div>
+            <div class="card-show-text">
+              <h2><%= @item.name %></h2>
+              <p><%= @item.description %></p>
+              <%= image_tag 'review' %>
+           </div>
+          <!--- Add avatar instead of logo -->
+          <%= cl_image_tag @item.user.photo, :class => "avatar-large" %>
+          <div class="card-show-available">
+            <% if policy(@item).edit? && @item.available%>
+              <%= button_to "Reserve item", edit_item_path, method: :get, :form_class => "button-reserve" %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-6 ">
-      <div class="show-boxes">
-        <h1><%= @item.name %></h1>
-        <p><%= @item.shop_location %></p>
-        <p><%= @item.description %></p>
-        <p><%= @item.price %></p>
-        <p><%= @item.category %></p>
-
-        <br>
-
-        <% if @item.available %>
-          <i class="fa fa-check-square-o"></i>
-          <i class="fa fa-square-o"></i>This item is available
-        <% else %>
-          <i class="fa fa-check-square-o"></i>
-          <i class="fa fa-square-o"></i>This item is already reserved
-        <% end %>
-        <br>
-
-        <% if policy(@item).edit? && @item.available%>
-          <%= button_to "Reserve item", edit_item_path, method: :get, :form_class => "my_class" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
 </div>
 
 
