@@ -16,6 +16,16 @@ class ItemsController < ApplicationController
     if params[:Shop_location].present?
       @items = @items.where(:shop_location => params[:Shop_location])
     end
+
+    # showing the map code
+    @items = Item.where.not(latitude: nil, longitude: nil)
+    @markers = @items.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
