@@ -15,11 +15,13 @@
   border-radius: 50%;
 }
 .card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 15px;
-  text-transform: uppercase;
+  position: relative;
+  top: 135px;
+  left: 5px;
+  font-size: 18px;
+  text-transform: capitalize;
+  padding-bottom: 7px;
+  color: rgb(242,201,76);
 }
 .card-description {
   position: absolute;
@@ -44,9 +46,9 @@
   background: black;
   opacity: 0;
 }
-.card-link:hover {
-  opacity: 0.1;
-}
+// .card-link:hover {
+//   opacity: 0.1;
+// }
 
 .col-xs-12 {
   margin-bottom: 30px;
@@ -54,4 +56,22 @@
 
 .col-sm-4 {
   margin-bottom: 30px;
+}
+
+.card-header {
+  height: 40px;
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-position: left;
+  color: rgb(242,201,76);
+  position: relative;
+  padding: 2px;
+}
+
+.card-text {
+  height: 30px;
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-position: left;
+  color: rgb(146,146,146);
+  position: relative;
+  padding: 2px;
 }
