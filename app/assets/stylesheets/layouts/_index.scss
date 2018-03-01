@@ -12,6 +12,15 @@ h1,h2{
   color:#AD343E;
 }
 
+.content {
+    display: flex;
+}
+#map {
+    flex: 0 0 450px;
+    height: 100vh;
+    position: sticky !important;
+    top: 0 !important;
+    }
 
 
 // Styling _form.html.erb
