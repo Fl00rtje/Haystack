@@ -1,3 +1,51 @@
-.show-boxes {
-  margin: 150px auto;
+
+.flex-container {
+  text-align: center;
 }
+
+.card-show {
+  margin: 150px auto;
+  position: relative;
+  height: 350px;
+  width: 450px;
+}
+
+.card-show-arrow {
+  position: absolute;
+  left: 0px;
+  top: -30px;
+}
+.card-show-image {
+  position: absolute;
+  left: 0px;
+  top: 15px;
+}
+
+#card-show-first-button {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+#card-show-scnd-button {
+  position: absolute;
+  left: 150px;
+  bottom: 0px;
+}
+
+.card-show-text {
+  position: absolute;
+  left: 0px;
+  top: 15px;
+}
+.card-show-text h2 {
+  margin: 0px;
+}
+
+.card-show-available {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+}
+
+
