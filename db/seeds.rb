@@ -2,6 +2,9 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 
+require "cloudinary"
+include CloudinaryHelper
+
 # Destroys all previous data before creating our new data
 User.destroy_all
 
