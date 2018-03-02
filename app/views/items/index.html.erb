@@ -1,11 +1,12 @@
 
 
-<div class="container">
-  <h1 class="index-header"></h1>
+<!--<div class="container">-->
+ <!-- <h1 class="index-header"></h1> -->
+<div class="content">
+<div class="cards-container">
 
-<%#= current_user.photo %>
+<div class="row" >
 
-  <div class="row">
     <% @items.each do |item| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card-text">
@@ -21,10 +22,11 @@
         <div class="card-description">
         </div>
 
-        <div class="card-category">
-          <%= item.name %>
+        <div class="card-category"><h2><%= item.name %></h2>
+
         </div>
         <div class="card-header">
+
         </div>
 
         <% unless item.user.photo.nil? %>
@@ -37,12 +39,14 @@
          <%#= cl_image_tag item.user.photo, height: 30, width: 40, crop: :fill %>
 
         <%= link_to "", item_path(item), class: "card-link" %>
-      </div>
+      </div><p><%= item.category %></p>
     </div>
+
+
     <% end %>
   </div>
+</div><!--cards-container-->
 
-
-  <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>" >
+  <div id="map" style="position: relative; overflow: hidden; width: 50%; " data-markers="<%= @markers.to_json %>"  >
   </div>
 </div>
