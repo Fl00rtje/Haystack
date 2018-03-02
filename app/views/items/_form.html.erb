@@ -11,8 +11,8 @@
 <div class="form-group">
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control'%>
-  <%= f.label :description %>
-  <%= f.text_field :description, class: 'form-control'%>
+  <%#= f.label :description %>
+  <%= f.input :description, as: :text, class: 'form-control'%>
 
   <%= f.input :category , collection: [:Furniture, :Clothing, :Ceramics,:Books,:Toys,:Other], include_blank: false %>
   <%= f.input :shop_location, collection: Item::SHOPS, include_blank: false %>
