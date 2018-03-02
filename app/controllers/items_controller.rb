@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     end
 
     # showing the map code
-    @items = Item.where.not(latitude: nil, longitude: nil)
+    @items = @items.where.not(latitude: nil, longitude: nil)
     @markers = @items.map do |item|
       {
         lat: item.latitude,
