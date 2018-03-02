@@ -5,7 +5,8 @@
 <div class="content">
 <div class="cards-container">
 
-  <div class="row" >
+<div class="row" >
+
     <% @items.each do |item| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card-text">
@@ -28,7 +29,14 @@
 
         </div>
 
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+        <% unless item.user.photo.nil? %>
+        <div class="card-user">
+         <%= cl_image_tag item.user.photo, height: 40, width: 40, crop: :fill %>
+        </div>
+         <% end %>
+
+         <!-- <span>photo is:</span> -->
+         <%#= cl_image_tag item.user.photo, height: 30, width: 40, crop: :fill %>
 
         <%= link_to "", item_path(item), class: "card-link" %>
       </div><p><%= item.category %></p>
@@ -41,5 +49,4 @@
 
   <div id="map" style="position: relative; overflow: hidden; width: 50%; " data-markers="<%= @markers.to_json %>"  >
   </div>
-</div><!--content-->
-<!--</div> height: 600px;-->
+</div>
