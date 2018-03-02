@@ -1,11 +1,11 @@
 
 
-<div class="container">
-  <h1 class="index-header"></h1>
+<!--<div class="container">-->
+ <!-- <h1 class="index-header"></h1> -->
 <div class="content">
 <div class="cards-container">
 
-  <div class="row" style="border:1px solid green;">
+  <div class="row" >
     <% @items.each do |item| %>
     <div class="col-xs-12 col-sm-4">
       <div class="card-text">
@@ -38,5 +38,5 @@
 
   <div id="map" style="position: relative; overflow: hidden; width: 50%; height: 600px;" data-markers="<%= @markers.to_json %>"  >
   </div>
-</div><!--content--> style="position: relative; overflow: hidden;"
-</div>
+</div><!--content-->
+<!--</div>-->
