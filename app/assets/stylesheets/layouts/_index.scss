@@ -16,11 +16,20 @@ h1,h2{
     display: flex;
 }
 #map {
-    flex: 0 0 450px;
+    flex: 0 0 400px;
     height: 100vh;
     position: sticky !important;
     top: 0 !important;
     }
+
+.cards-container{
+  margin:15px auto;
+  display:block;
+  min-width: 1250px;
+  padding: 0px 10px;
+
+
+}
 
 
 // Styling _form.html.erb
